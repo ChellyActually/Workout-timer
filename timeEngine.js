@@ -2,7 +2,7 @@ const TimeEngine = {
     currentQueue: [],
     currentIndex:0,
     currentRemainingTime: 0,
-    timerId: null
+    timerId: null,
 
  startEngine(validatedQueue){
     if(!validatedQueue || validatedQueue.length===0){
