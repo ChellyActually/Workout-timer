@@ -6,7 +6,7 @@ The HLD focuses on how data flows sequentially between the three members' module
 
 ### System Architecture Diagram
 
-```
+```text
 +--------------------------------------------------------------------------+
 |                                index.html                                |
 |  Holds the global layout structures, UI containers, and entry buttons.  |
