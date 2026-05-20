@@ -1,6 +1,7 @@
 import RoutineBuilder from './routineBuilder.js';
 import TimeEngine from './timeEngine.js';
 
+RoutineBuilder.init();
 document.getElementById('start-routine-btn').addEventListener('click', () => {
     
     const standardQueue = RoutineBuilder.getFinalQueue();
@@ -9,5 +10,3 @@ document.getElementById('start-routine-btn').addEventListener('click', () => {
         TimeEngine.startEngine(standardQueue);
     }
 });
-
-RoutineBuilder.init();
