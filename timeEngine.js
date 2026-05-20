@@ -16,7 +16,7 @@ const TimeEngine = {
 loadCurrentInterval(){
     const currentItem=this.currentQueue[this.currentIndex];
     this.currentRemainingTime=currentItem.duration;
-    TimePresenter.onIntervalChanged(currentItem);
+    TimerPresenter.onIntervalChanged(currentItem);
     this.runClockLoop();
 },
 runClockLoop(){
@@ -38,10 +38,10 @@ stopClockLoop(){
 nextInterval(){
     this.currentIndex++;
     if(this.currentIndex < this.currentQueue.length){
-        this.loadcurrentInterval();
+        this.loadCurrentInterval();
     }
     else{
-        TimerPresenter.onWorkoutCompleted();
+        TimerPresenter.onWorkoutComplete();
     }
 
 },
