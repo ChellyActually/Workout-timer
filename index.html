@@ -1,64 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Automated Interval Timer</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="app-container">
-        <!-- ========================================== -->
-        <!-- MEMBER 1 WORKSPACE: Configuration Panel    -->
-        <!-- ========================================== -->
-        <section class="setup-panel">
-            <h2>Build Your Routine</h2>
-            <form id="routine-form" onsubmit="event.preventDefault();">
-                <div class="form-group">
-                    <label for="exercise-name">Exercise Name</label>
-                    <input type="text" id="exercise-name" placeholder="e.g., Pushups, Plank, Squats" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="exercise-duration">Duration (seconds)</label>
-                    <input type="number" id="exercise-duration" min="1" placeholder="30" required>
-                </div>
+      <!-- ========================================== -->
+      <!-- MEMBER 1 WORKSPACE: Configuration Panel    -->
+      <!-- ========================================== -->
+      <section class="setup-panel">
+        <h2>Build Your Routine</h2>
+        <form id="routine-form" onsubmit="event.preventDefault()">
+          <div class="form-group">
+            <label for="exercise-name">Exercise Name</label>
+            <input
+              type="text"
+              id="exercise-name"
+              placeholder="e.g., Pushups, Plank, Squats"
+              required
+            />
+          </div>
 
-                <button type="button" id="add-interval-btn">Add to Routine</button>
-            </form>
+          <div class="form-group">
+            <label for="exercise-duration">Duration (seconds)</label>
+            <input
+              type="number"
+              id="exercise-duration"
+              min="1"
+              placeholder="30"
+              required
+            />
+          </div>
 
-            <!-- Preview panel to look at what's currently in Member 1's array -->
-            <div class="preview-container">
-                <h3>Routine Preview</h3>
-                <ul id="routine-preview-list">
-                    <!-- Member 1 will dynamically inject <li> elements here -->
-                    <li class="empty-notice">No exercises added yet.</li>
-                </ul>
-            </div>
+          <div class="form-group">
+            <label for="default-rest-time">Default Rest Time (seconds)</label>
+            <input
+              type="number"
+              id="default-rest-time"
+              min="0"
+              placeholder="10"
+              value="10"
+            />
+          </div>
 
-            <!-- Global control to hand data to Member 2 -->
-            <button id="start-routine-btn" class="btn-primary">⚡ Start Workout</button>
-        </section>
+          <button type="button" id="add-interval-btn">Add to Routine</button>
+        </form>
 
-        <!-- ========================================== -->
-        <!-- MEMBER 3 WORKSPACE: Visual Display Arena   -->
-        <!-- ========================================== -->
-        <!-- Member 3 changes the class of this container to swap background states -->
-        <section id="timer-display-zone" class="timer-panel state-idle">
-            
-            <div class="display-wrapper">
-                <!-- Shows current exercise name or "REST" -->
-                <h1 id="active-activity-name">Ready to Sweat?</h1>
-                
-                <!-- Large Countdown Clock Element -->
-                <div id="countdown-visual-box" class="clock-circle">
-                    <span id="seconds-countdown">00</span>
-                    <span class="unit-label">s</span>
-                </div>
-            </div>
+        <!-- Preview panel to look at what's currently in Member 1's array -->
+        <div class="preview-container">
+          <h3>Routine Preview</h3>
+          <ul id="routine-preview-list">
+            <!-- Member 1 will dynamically inject <li> elements here -->
+            <li class="empty-notice">No exercises added yet.</li>
+          </ul>
+        </div>
 
-        </section>
+        <!-- Global control to hand data to Member 2 -->
+        <button id="start-routine-btn" class="btn-primary">
+          ⚡ Start Workout
+        </button>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- MEMBER 3 WORKSPACE: Visual Display Arena   -->
+      <!-- ========================================== -->
+      <!-- Member 3 changes the class of this container to swap background states -->
+      <section id="timer-display-zone" class="timer-panel state-idle">
+        <div class="display-wrapper">
+          <!-- Shows current exercise name or "REST" -->
+          <h1 id="active-activity-name">Ready to Sweat?</h1>
+
+          <!-- Large Countdown Clock Element -->
+          <div id="countdown-visual-box" class="clock-circle">
+            <span id="seconds-countdown">00</span>
+            <span class="unit-label">s</span>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- ========================================== -->
@@ -68,5 +89,5 @@
     <script src="timerEngine.js"></script>
     <script src="timerPresenter.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
