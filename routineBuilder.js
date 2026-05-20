@@ -59,5 +59,4 @@ const RoutineBuilder = {
     }
 }
 
-
 export default RoutineBuilder;
