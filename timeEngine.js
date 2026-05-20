@@ -4,7 +4,7 @@ const TimeEngine = {
     currentRemainingTime: 0,
     timerId: null
 
- startEngine (validatedQueue){
+ startEngine(validatedQueue){
     if(!validatedQueue || validatedQueue.length===0){
         alert("Workout queue is empty!!");
         return;
