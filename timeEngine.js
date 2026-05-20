@@ -1,3 +1,5 @@
+import TimerPresenter from './timerPresenter.js';
+
 const TimeEngine = {
     currentQueue: [],
     currentIndex:0,
