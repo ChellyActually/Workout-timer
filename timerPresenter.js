@@ -36,8 +36,8 @@ const TimerPresenter = {
         
         this.timerDisplayZone.classList.remove(
             "state-idle",
-            "state-work",
-            "state-rest",
+            "state-working-active",
+            "state-rest-active",
             "state-complete"
         );
 
@@ -45,13 +45,13 @@ const TimerPresenter = {
        
         if (activeItem.type === "WORK") {
 
-            this.timerDisplayZone.classList.add("state-work");
+            this.timerDisplayZone.classList.add("state-working-active");
 
         } 
         
         else if (activeItem.type === "REST") {
 
-            this.timerDisplayZone.classList.add("state-rest");
+            this.timerDisplayZone.classList.add("state-rest-active");
         }
     },
 
@@ -88,8 +88,8 @@ const TimerPresenter = {
 
 
         this.timerDisplayZone.classList.remove(
-            "state-work",
-            "state-rest",
+            "state-working-active",
+            "state-rest-active",
             "state-idle"
         );
 
