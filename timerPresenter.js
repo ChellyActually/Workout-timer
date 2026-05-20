@@ -31,8 +31,8 @@ const TimerPresenter = {
 
        
         this.playBeep();
-
-
+        
+        
         
         this.timerDisplayZone.classList.remove(
             "state-idle",
@@ -40,27 +40,28 @@ const TimerPresenter = {
             "state-rest-active",
             "state-complete"
         );
-
-
-       
+        
+        
+        
         if (activeItem.type === "WORK") {
-
+            
             this.timerDisplayZone.classList.add("state-working-active");
-
+            
         } 
         
         else if (activeItem.type === "REST") {
-
+            
             this.timerDisplayZone.classList.add("state-rest-active");
         }
     },
-
-
     
-
+    
+    
+    
     onTick(remainingSeconds) {
-
+        
         this.secondsCountdown.innerText = remainingSeconds;
+        this.playBeep();
 
 
         // Last 3 second warning effect
