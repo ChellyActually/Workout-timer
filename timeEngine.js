@@ -5,7 +5,7 @@ const TimeEngine = {
     currentIndex:0,
     currentRemainingTime: 0,
     timerId: null,
-
+    isPaused : false,
  startEngine(validatedQueue){
     if(!validatedQueue || validatedQueue.length===0){
         alert("Workout queue is empty!!");
@@ -13,6 +13,7 @@ const TimeEngine = {
     }
     this.currentQueue= validatedQueue;
     this.currentIndex = 0;
+    this.isPaused = false;
     this.loadCurrentInterval();
 },
 loadCurrentInterval(){
@@ -22,6 +23,9 @@ loadCurrentInterval(){
     this.runClockLoop();
 },
 runClockLoop(){
+    if(this.timerId){
+        this.stopClockLoop();
+    }
     this.timerId=setInterval(()=>{
        this.currentRemainingTime--;
        TimerPresenter.onTick(this.currentRemainingTime);
@@ -36,6 +40,22 @@ stopClockLoop(){
     clearInterval(this.timerId);
  }
 
+},
+pauseEngine(){
+    if(this.isPaused || !this.timerId){
+        return;
+    }
+    this.stopClockLoop();
+    this.isPaused = true;
+    console.log("Timer Paused!!");
+},
+resumeEngine(){
+    if(!this.isPaused){
+        return;
+    }
+    this.isPaused = false;
+    this.runClockLoop();
+    console.log("Timer Resumed!!");
 },
 nextInterval(){
     this.currentIndex++;
